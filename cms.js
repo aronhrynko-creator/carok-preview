@@ -45,7 +45,7 @@
         var h3 = card.querySelector('h3'), p = card.querySelector('p'), img = card.querySelector('img');
         if (h3 && s.t) h3.textContent = s.t; if (p && s.p != null) p.textContent = s.p; if (img && s.t) img.alt = s.t;
         var pr = card.querySelector('.cms-pr');
-        if (s.price) { if (!pr) { pr = document.createElement('b'); pr.className = 'cms-pr'; (h3 || card).insertAdjacentElement('afterend', pr); } pr.textContent = s.price; }
+        if (s.price) { if (!pr) { pr = document.createElement('b'); pr.className = 'cms-pr'; (card.querySelector('.core') || card).prepend(pr); } pr.textContent = s.price; }
         else if (pr) pr.remove();
       });
       var sel = document.getElementById('bk-s');
